@@ -1,0 +1,13 @@
+● mysql.service - MySQL Community Server
+   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+   Active: activating (start-post) (Result: exit-code) since Sun 2018-12-09 05:38:29 UTC; 11s ago
+  Process: 2961 ExecStart=/usr/sbin/mysqld [0;1;31m(code=exited, status=1/FAILURE)[0m
+  Process: 2953 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+ Main PID: 2961 (code=exited, status=1/FAILURE);         : 2962 (mysql-systemd-s)
+    Tasks: 2
+   Memory: 312.0K
+      CPU: 249ms
+   CGroup: /system.slice/mysql.service
+           └─control
+             ├─2962 /bin/bash /usr/share/mysql/mysql-systemd-start post
+             └─3001 sleep 1

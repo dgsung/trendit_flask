@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <h1 class="my-4">earring</h1>
+            <div class="list-group">
+                <a href="/earring" class="list-group-item active">earring</a>
+                <a href="/nailart" class="list-group-item">nailart</a>
+            </div>
+        </div>
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-9">
+            {% include 'includes/_flashmsg.html' %}
+
+            <div class="row">
+                {% for product in earring %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
+                    <div class="card h-50">
+                        <a href="/earring?view={{product.id}}">
+                            <div class="card-img-top"
+                                 style="background: url('static/image/product/{{product.category}}/{{product.picture}}'); background-repeat:no-repeat; background-size: cover; height:200px;width:100% "></div>
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="/earring?view={{product.id}}">{{ product.pName}}</a>
+                            </h5>
+                            <h4>${{product.price}}</h4>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"></small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+{% endblock %}
